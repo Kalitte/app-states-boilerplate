@@ -1,0 +1,18 @@
+<polymer-element name="account-states" noscript>
+  <template>
+    <app-state id="account-signup-state" header="Signup">
+      <template target="#account-action-section" is="states-template">
+        <account-signup></account-signup>
+      </template>
+
+      <template is="states-template" target="#nav-custom-section">
+        <h2>Why Signup ?</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur maxime quae itaque, velit dolor quisquam ut quaerat in ea voluptates eum architecto sunt nemo doloremque amet sed, minus deserunt laboriosam.</p>
+      </template>
+    </app-state>
+
+    <!-- If you have only one template just use target & el properties-->
+    <app-state id="account-signin-state" header="Signin" target="#account-action-section" el="account-signin"></app-state>
+
+  </template>
+</polymer-element>

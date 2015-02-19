@@ -1,0 +1,8 @@
+.app /deep/ .separator {
+  height: 1px;
+  background-color: #eee;
+}
+
+.app /deep/ #nav-custom-section {
+  margin:12px;
+}

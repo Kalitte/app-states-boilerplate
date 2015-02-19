@@ -1,0 +1,28 @@
+{
+  "name": "app-states boilerplate application",
+  "version": "0.0.0",
+  "authors": [
+    "Tansu TURKOGLU <tansut@gmail.com>"
+  ],
+  "description": "app-states and app-states-ui boilerplate application.",
+  "main": "index.html",
+  "keywords": [
+    "web-components",
+    "app-states",
+    "app-states-ui",
+    "spa"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "app-states-ui": "~0.6.7",
+    "app-states": "~0.6.7"
+  }
+}

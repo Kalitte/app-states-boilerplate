@@ -1,0 +1,81 @@
+<polymer-element name="my-app" class="app">
+  <style>
+
+  </style>
+  <template>
+    <app-states id="stateManager">
+
+      <app-state id="root-state" header="Home" bindState bindUrlParams>
+        <template is="states-template" target="#nav-section">
+          <states-menu ignoreAttr="ignoreMenu"></states-menu>
+        </template>
+
+        <template is="states-template" target="#main-section">
+          <home-index></home-index>
+        </template>
+
+        <app-state id="account-state" url="account" header="Account Home" childStates="account-states">
+          <template is="states-template" target="#main-section">
+            <account-index></account-index>
+          </template>
+        </app-state>
+
+        <app-state id="not-found-state" url="*" ignoreMenu header="Not Found">
+          <template is="states-template" target="#main-section">
+            <page-404></page-404>
+          </template>
+        </app-state>
+
+
+      </app-state>
+    </app-states>
+
+
+    <core-scaffold>
+
+      <core-header-panel navigation flex>
+        <core-toolbar>
+          <span>app-states app</span>
+        </core-toolbar>
+        <core-menu excludedLocalNames="div">
+          <core-item active icon="home" label="HOME">
+            <a is="states-anchor" stateId="root-state"></a>
+          </core-item>
+          <div class="separator"></div>
+        </core-menu>
+        <section id="nav-section" is="states-section" ></section>
+        <section id="nav-custom-section" is="states-section" ></section>
+      </core-header-panel>
+
+      <span tool>
+        {{$.stateManager.currentState.header}}
+
+      </span>
+
+      <section class="content" is="states-section" id="main-section">
+
+        </div>
+    </core-scaffold>
+
+
+  </template>
+  <script>
+    (function() {
+      Polymer({
+
+        stateChanged: function(e) {
+
+        },
+
+        created: function() {
+
+        },
+
+        ready: function() {
+          this.$.stateManager.addEventListener('state-changed', this.stateChanged.bind(this));
+        }
+      });
+    })();
+  </script>
+
+</polymer-element>
